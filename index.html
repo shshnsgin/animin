@@ -519,6 +519,83 @@ and (max-device-width : 667px) {
 	.send textarea {
 		width: 85%;
 	}
+		/* Заголовок сайта плавно появляется */
+.logo_text h1 {
+  opacity: 0;
+  animation: fadeInDown 2s ease forwards;
+}
+
+.logo_text h2 {
+  opacity: 0;
+  animation: fadeInUp 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Меню с плавной подсветкой */
+ul.menu li a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+ul.menu li a:hover {
+  transform: scale(1.1);
+  color: #FFD700;
+}
+
+/* Картинки (манга и аниме) — увеличиваются и поднимаются */
+.films_block img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.films_block img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Кнопки (вход, регистрация, "читать") — пульсирующие */
+.btn, .button {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Сайдбар плавно появляется справа */
+.sidebar {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideIn 1s forwards;
+}
+.sidebar:nth-child(2) { animation-delay: 0.3s; }
+.sidebar:nth-child(3) { animation-delay: 0.6s; }
+.sidebar:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes slideIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Footer плавно проявляется */
+.footer {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 }
 </style>
 </head>
